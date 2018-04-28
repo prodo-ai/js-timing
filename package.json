@@ -1,6 +1,6 @@
 {
   "name": "@prodo-ai/js-timing",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JS utilities for timing",
   "main": "lib/index.js",
   "files": [
