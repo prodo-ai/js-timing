@@ -1,13 +1,14 @@
 // @flow
 
 import type {Cancel, Duration, ErrorHandler} from "./types";
-import {DefaultErrorHandler} from "./errors";
 
-import {MILLISECONDS} from "./constants";
+import {MILLISECOND, MILLISECONDS} from "./constants";
+import {duration} from "./duration";
+import {DefaultErrorHandler} from "./errors";
 
 export const repeatedly = (
   behaviour: () => Promise<?Duration> | ?Duration,
-  defaultDelay: Duration,
+  defaultDelay: Duration = duration(1, MILLISECOND),
   onError: ErrorHandler = DefaultErrorHandler,
 ): Cancel => {
   let pendingCancellation = false;
