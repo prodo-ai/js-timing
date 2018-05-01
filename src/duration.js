@@ -1,6 +1,6 @@
 // @flow
 
-import type {TimeUnit, Duration} from "./types";
+import type {Duration, TimeUnit} from "./types";
 
 export const duration = (magnitude: number, unit: TimeUnit): Duration => ({
   in(targetUnit: TimeUnit) {

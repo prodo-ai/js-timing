@@ -1,6 +1,7 @@
 // @flow
 
 import type {Cancel, Duration, ErrorHandler} from "./types";
+
 import {DefaultErrorHandler} from "./errors";
 import {repeatedly} from "./repeatedly";
 
