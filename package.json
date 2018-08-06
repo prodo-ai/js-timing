@@ -1,8 +1,9 @@
 {
   "name": "@prodo-ai/js-timing",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "JS utilities for timing",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
@@ -13,9 +14,10 @@
   "scripts": {
     "eslint": "eslint src test --color && echo 'No errors.'",
     "flow": "flow status",
-    "prepack": "npm run prepack:babel && npm run prepack:flow",
+    "prepack": "npm run prepack:babel && npm run prepack:flow && npm run prepack:ts",
     "prepack:babel": "babel src/ -d lib",
     "prepack:flow": "find src -name *.js -type f | cut -d'/' -f2 | xargs -I '{}' cp src/{} lib/{}.flow",
+    "prepack:ts": "cp index.d.ts lib/",
     "test": "npm run test:ava && npm run test:eslint && npm run test:flow",
     "test:ava": "ava --color --verbose --timeout=3000 test",
     "test:eslint": "npm run eslint",
